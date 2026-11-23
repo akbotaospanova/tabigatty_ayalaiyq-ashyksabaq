@@ -1,0 +1,1 @@
+# tabigatty_ayalaiyq-ashyksabaq
