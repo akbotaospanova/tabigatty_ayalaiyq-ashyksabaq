@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>«Табиғатты аялайық!» | 5-сынып қазақ тілі | Bilim Hub орталығы</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=PT+Serif:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --forest:#0f2e24;--moss:#1d4d3a;--leaf:#2f8a57;--lime:#8fd16a;--sun:#f6c445;--coral:#f0834b;--sky:#4aa3d8;
+  --bg:#f2f8ee;--paper:#ffffff;--ink:#1f2d27;--muted:#5f7368;--r:22px;--shadow:0 14px 36px rgba(15,46,36,.14);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Nunito',sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;font-size:16px}
+h1,h2,h3,h4{line-height:1.2;font-weight:900}
+.serif{font-family:'PT Serif',serif}
+.wrap{max-width:1180px;margin:auto}
+section{padding:70px 20px}
+
+/* top bar */
+.topbar{position:sticky;top:0;z-index:50;background:rgba(15,46,36,.93);backdrop-filter:blur(10px);color:#fff}
+.topbar .in{max-width:1180px;margin:auto;display:flex;align-items:center;gap:16px;padding:10px 20px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:900;white-space:nowrap}
+.logo{width:40px;height:40px;border-radius:14px;background:linear-gradient(135deg,var(--sun),var(--lime));display:grid;place-items:center;color:var(--forest);font-size:20px}
+.brand small{display:block;font-weight:700;font-size:11px;color:var(--lime);letter-spacing:2px;text-transform:uppercase}
+.nav{display:flex;gap:4px;overflow-x:auto;margin-left:auto;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav a{text-decoration:none;color:#e3f3e8;font-weight:800;font-size:13px;padding:7px 12px;border-radius:30px;white-space:nowrap}
+.nav a:hover{background:rgba(143,209,106,.2);color:var(--sun)}
+
+/* hero */
+.hero{position:relative;overflow:hidden;color:#fff;background:linear-gradient(180deg,#5cb7e6 0%,#8fd0ee 38%,#bfe7c3 62%,#2f8a57 63%,#1d4d3a 100%)}
+.hero .in{position:relative;z-index:2;max-width:1180px;margin:auto;padding:70px 20px 140px;display:grid;grid-template-columns:1.2fr .9fr;gap:36px;align-items:center}
+.sun{position:absolute;top:40px;right:8%;width:130px;height:130px;border-radius:50%;background:radial-gradient(circle,#fff6c9,#f6c445 60%,rgba(246,196,69,0) 72%);animation:pulse 5s ease-in-out infinite}
+@keyframes pulse{50%{transform:scale(1.08)}}
+.cloud{position:absolute;background:#fff;border-radius:60px;opacity:.85;animation:float 40s linear infinite}
+.cloud:before,.cloud:after{content:"";position:absolute;background:#fff;border-radius:50%}
+.c1{width:150px;height:44px;top:70px;left:-160px}
+.c1:before{width:70px;height:70px;top:-34px;left:22px}.c1:after{width:50px;height:50px;top:-22px;left:78px}
+.c2{width:110px;height:34px;top:150px;left:-120px;animation-duration:55s;animation-delay:-20s}
+.c2:before{width:50px;height:50px;top:-24px;left:16px}.c2:after{width:36px;height:36px;top:-16px;left:58px}
+@keyframes float{to{transform:translateX(1700px)}}
+.hills{position:absolute;bottom:0;left:0;width:100%;height:230px;z-index:1}
+.tag{display:inline-block;background:rgba(15,46,36,.55);border:1px solid rgba(255,255,255,.4);padding:6px 14px;border-radius:30px;font-size:13px;font-weight:800}
+.hero h1{font-size:clamp(38px,6vw,72px);margin:16px 0 10px;color:var(--forest);text-shadow:0 2px 0 rgba(255,255,255,.5)}
+.hero h1 span{color:var(--coral)}
+.lead{font-size:18px;color:var(--forest);font-weight:700;max-width:560px}
+.glass{background:rgba(255,255,255,.85);color:var(--ink);border-radius:24px;padding:24px;box-shadow:var(--shadow)}
+.glass h3{color:var(--leaf);font-size:18px;margin-bottom:8px}
+.goal{display:flex;gap:10px;margin:10px 0;font-size:14px;font-weight:600}
+.goal b{flex:0 0 auto;background:var(--leaf);color:#fff;border-radius:8px;padding:2px 8px;font-size:12px;height:fit-content}
+.btn{display:inline-flex;align-items:center;gap:8px;border:none;cursor:pointer;font-family:Nunito;font-weight:900;font-size:15px;padding:12px 22px;border-radius:40px;text-decoration:none;transition:.2s}
+.btn:hover{transform:translateY(-2px)}
+.b-sun{background:var(--sun);color:var(--forest);box-shadow:0 6px 0 #c99a1e}
+.b-leaf{background:var(--leaf);color:#fff;box-shadow:0 6px 0 #1d5c39}
+.b-coral{background:var(--coral);color:#fff;box-shadow:0 6px 0 #b85a2a}
+.b-white{background:#fff;color:var(--forest);box-shadow:0 6px 0 #c5d8cc}
+
+/* section head */
+.sh{display:flex;align-items:center;gap:16px;margin-bottom:28px;flex-wrap:wrap}
+.sh .ic{width:68px;height:68px;border-radius:22px;display:grid;place-items:center;font-size:34px;background:var(--paper);box-shadow:var(--shadow)}
+.sh p{font-size:13px;font-weight:900;letter-spacing:2px;text-transform:uppercase;color:var(--coral)}
+.sh h2{font-size:clamp(26px,3.6vw,40px);color:var(--forest)}
+.card{background:var(--paper);border-radius:var(--r);padding:26px;box-shadow:var(--shadow)}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.pill{display:inline-block;font-size:11px;font-weight:900;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:20px;background:#e3f4e6;color:var(--leaf)}
+.value{display:flex;gap:10px;align-items:center;background:#fff7dc;border-left:5px solid var(--sun);padding:10px 14px;border-radius:12px;font-size:14px;font-weight:800;color:#7a5a00;margin:14px 0}
+.stage{background:var(--paper);border-radius:18px;padding:18px;box-shadow:var(--shadow);border-bottom:6px solid var(--lime)}
+.stage b{font-size:30px;color:var(--leaf)}
+.stage span{display:block;font-size:13px;color:var(--muted);font-weight:700}
+
+/* video */
+.vlink{display:flex;gap:14px;align-items:center;text-decoration:none;background:var(--paper);border-radius:18px;padding:14px;box-shadow:var(--shadow);margin-bottom:14px;color:var(--ink);transition:.2s}
+.vlink:hover{transform:translateX(6px)}
+.play{flex:0 0 54px;height:54px;border-radius:50%;background:linear-gradient(135deg,var(--coral),#e2553a);display:grid;place-items:center;color:#fff;font-size:20px}
+.vlink b{display:block}.vlink small{color:var(--muted)}
+.big-q{font-family:'PT Serif';font-size:22px;color:var(--moss);margin:10px 0}
+.gchip{flex:1;min-width:140px;padding:14px;border-radius:16px;color:#fff;font-weight:900;text-align:center}
+.gs{background:linear-gradient(135deg,#2f8a57,#5fbf7f)}
+.ga{background:linear-gradient(135deg,#e2553a,#f0834b)}
+.go{background:linear-gradient(135deg,#2a77b0,#4aa3d8)}
+.gout{font-size:26px;font-weight:900;margin:12px 0;min-height:38px;color:var(--leaf)}
+
+/* theory */
+.ann{position:relative;background:#fffdf3;border:3px dashed var(--sun);border-radius:20px;padding:30px 26px;text-align:center;box-shadow:var(--shadow)}
+.ann .pin{position:absolute;top:-16px;left:50%;transform:translateX(-50%);font-size:30px}
+.ann h3{font-size:30px;color:#c0392b;letter-spacing:3px}
+.ann .part{position:relative;display:block;margin:10px 0;padding:8px;border-radius:10px;cursor:pointer;transition:.2s;font-weight:700}
+.ann .part:hover,.ann .part.on{background:#e3f4e6}
+.ann .lbl{display:none;position:absolute;right:-8px;top:-12px;background:var(--leaf);color:#fff;font-size:11px;padding:2px 8px;border-radius:20px}
+.ann .part.on .lbl,.ann .part:hover .lbl{display:block}
+.steps{counter-reset:s;list-style:none}
+.steps li{counter-increment:s;position:relative;padding:10px 0 10px 50px;border-bottom:1px dashed #d6e6da;font-weight:600}
+.steps li:before{content:counter(s);position:absolute;left:0;top:8px;width:34px;height:34px;border-radius:50%;background:var(--leaf);color:#fff;display:grid;place-items:center;font-weight:900}
+.word-card{border-radius:22px;padding:24px;color:#fff;position:relative;overflow:hidden}
+.word-card h3{font-size:28px}
+.word-card .def{font-weight:700;margin:6px 0 12px;opacity:.95}
+.word-card .ex{background:rgba(255,255,255,.18);border-radius:12px;padding:10px 12px;margin:6px 0;font-weight:800}
+.word-card .big{position:absolute;right:-6px;bottom:-30px;font-size:120px;opacity:.15;font-weight:900}
+.ws{background:linear-gradient(150deg,#2f8a57,#1d4d3a)}
+.wa{background:linear-gradient(150deg,#f0834b,#c0392b)}
+.wo{background:linear-gradient(150deg,#4aa3d8,#22597f)}
+.dict{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px}
+.dict div{background:var(--paper);border-radius:16px;padding:16px;text-align:center;box-shadow:var(--shadow);font-weight:700}
+.dict b{display:block;font-size:30px}
+
+/* tasks */
+.task{position:relative;background:var(--paper);border-radius:26px;padding:32px 30px 28px;box-shadow:var(--shadow);margin-bottom:30px}
+.tnum{position:absolute;top:-16px;left:26px;background:var(--coral);color:#fff;font-weight:900;padding:6px 16px;border-radius:30px;font-size:13px}
+.task h3{font-size:24px;color:var(--forest);margin:6px 0}
+.method{color:var(--leaf);font-weight:900}
+.task ol,.task ul{margin:10px 0 0 22px}.task li{margin:5px 0}
+.textbox{background:#f6fbf3;border:2px solid #d6e6da;border-radius:16px;padding:18px;margin:12px 0;font-size:17px;line-height:1.9}
+.desc{margin-top:14px;border-radius:14px;overflow:hidden;border:1px solid #d6e6da}
+.desc table{width:100%;border-collapse:collapse;font-size:14px}
+.desc th{background:var(--moss);color:#fff;text-align:left;padding:10px 14px}
+.desc td{padding:9px 14px;border-top:1px solid #e6efe8}
+.desc td:last-child{text-align:center;font-weight:900;color:var(--coral);width:70px}
+.desc tr:nth-child(even) td{background:#f6fbf3}
+
+/* games */
+.games{background:linear-gradient(170deg,var(--forest),var(--moss));color:#fff;position:relative}
+.games .sh h2{color:#fff}.games .sh p{color:var(--sun)}
+.game{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:24px;padding:26px;margin-bottom:26px}
+.game h3{color:var(--sun);font-size:24px}
+.game .sub{color:#cfe6d6;font-size:14px;margin-bottom:12px;font-weight:600}
+.score{float:right;background:var(--sun);color:var(--forest);padding:4px 14px;border-radius:30px;font-weight:900;font-size:14px}
+.errtext{background:#fffdf3;color:var(--ink);border-radius:18px;padding:22px;font-size:19px;line-height:2.1}
+.w{padding:2px 4px;border-radius:6px;cursor:pointer;transition:.15s}
+.w:hover{background:#fff0b8}
+.w.fixed{background:#bff0cf;color:#145a32;font-weight:900}
+.w.bad{background:#ffd3d3;animation:shake .3s}
+@keyframes shake{25%{transform:translateX(-3px)}75%{transform:translateX(3px)}}
+.pair{font-size:26px;font-weight:900;background:rgba(0,0,0,.22);border-radius:18px;padding:22px;margin:12px 0;text-align:center;min-height:84px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btns .btn{flex:1;justify-content:center;min-width:140px}
+.fb{margin-top:10px;font-weight:900;min-height:24px}
+.ok{color:#a8f3c4}.no{color:#ffb3b3}
+.slots{display:grid;gap:8px;margin:12px 0}
+.slot{background:rgba(0,0,0,.22);border:2px dashed rgba(246,196,69,.5);border-radius:14px;padding:10px 14px;min-height:46px;font-weight:800;display:flex;gap:10px;align-items:center}
+.slot i{font-style:normal;background:var(--sun);color:var(--forest);border-radius:50%;width:26px;height:26px;display:grid;place-items:center;font-size:13px;flex:0 0 auto}
+.slot.done{border-style:solid;border-color:#a8f3c4;background:rgba(168,243,196,.15)}
+.bank{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.chip{background:#fff;color:var(--forest);padding:9px 14px;border-radius:30px;font-weight:800;font-size:14px;cursor:pointer;border:none;font-family:Nunito}
+.chip.wrong{background:#ffd3d3}
+.quiz-q{font-family:'PT Serif';font-size:22px;margin:10px 0 14px}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.opt{background:rgba(255,255,255,.1);border:1.5px solid rgba(255,255,255,.25);color:#fff;padding:14px;border-radius:14px;cursor:pointer;font-family:Nunito;font-weight:700;font-size:15px;text-align:left}
+.opt:hover{background:rgba(246,196,69,.2)}
+.opt.r{background:#2f8a57;border-color:#a8f3c4}.opt.x{background:#a83232;border-color:#ffb3b3}
+.bar{height:8px;background:rgba(255,255,255,.15);border-radius:10px;overflow:hidden;margin:6px 0}
+.bar i{display:block;height:100%;width:100%;background:linear-gradient(90deg,var(--sun),var(--coral))}
+
+/* levels */
+.level{border-radius:24px;padding:28px;color:#fff}
+.lA{background:linear-gradient(150deg,#e2553a,#8e2a1c)}
+.lC{background:linear-gradient(150deg,#2a77b0,#15425f)}
+.badge{display:inline-grid;place-items:center;width:62px;height:62px;border-radius:50%;background:var(--sun);color:var(--forest);font-size:32px;font-weight:900}
+.level h3{font-size:22px;margin:10px 0 6px}.level ul{margin:8px 0 0 20px}
+.level .value{background:rgba(255,255,255,.15);color:#fff;border-color:var(--sun)}
+
+/* break */
+.move div{background:var(--paper);border-radius:18px;padding:20px;text-align:center;box-shadow:var(--shadow);font-weight:800}
+.move b{display:block;font-size:42px}
+
+/* reflection tree */
+.tree-wrap{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:center}
+.tree{position:relative;height:340px;background:var(--paper);border-radius:26px;box-shadow:var(--shadow);overflow:hidden}
+.trunk{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:44px;height:150px;background:linear-gradient(90deg,#7a4a26,#9a6234);border-radius:10px 10px 0 0}
+.crown{position:absolute;left:50%;top:20px;transform:translateX(-50%);width:300px;height:220px;border-radius:50%;background:radial-gradient(circle at 40% 40%,#d9f0cf,#bfe3b0)}
+.leafdot{position:absolute;font-size:26px;animation:drop .5s ease-out}
+@keyframes drop{from{transform:translateY(-30px) scale(.3);opacity:0}}
+.leaves{display:flex;gap:12px;flex-wrap:wrap}
+.lbtn{flex:1;min-width:150px;border:none;border-radius:18px;padding:16px;cursor:pointer;font-family:Nunito;font-weight:800;text-align:left;box-shadow:var(--shadow);background:var(--paper)}
+.lbtn span{font-size:30px;display:block}
+.lbtn small{display:block;color:var(--muted);font-weight:600}
+textarea{width:100%;border:2px solid #d6e6da;border-radius:14px;padding:10px;font-family:Nunito;font-size:15px;min-height:64px;margin-top:6px}
+
+.hw .card{border-top:7px solid var(--lime)}
+.hw .card:nth-child(2){border-color:var(--sun)}
+.hw .card:nth-child(3){border-color:var(--sky)}
+.hw h4{font-size:20px;color:var(--forest);margin:6px 0}
+
+/* timer */
+.timer{position:fixed;right:16px;bottom:16px;z-index:60;background:var(--forest);color:#fff;border-radius:20px;padding:12px;box-shadow:var(--shadow);border:2px solid var(--lime);width:180px;font-size:13px}
+.timer .hd{display:flex;justify-content:space-between;font-weight:900;cursor:pointer}
+.timer .t{font-size:34px;font-weight:900;color:var(--sun);text-align:center}
+.timer .row{display:flex;gap:5px;justify-content:center;margin-top:6px}
+.timer button{background:rgba(255,255,255,.14);color:#fff;border:none;border-radius:8px;padding:5px 8px;cursor:pointer;font-family:Nunito;font-weight:900}
+.timer button:hover{background:var(--sun);color:var(--forest)}
+.timer.min .body{display:none}
+
+footer{background:var(--forest);color:#cfe6d6;text-align:center;padding:40px 20px;font-size:14px}
+footer .brand{justify-content:center;color:#fff;margin-bottom:8px}
+footer a{color:var(--sun);font-weight:900}
+.reveal{opacity:0;transform:translateY(24px);transition:.7s}.reveal.vis{opacity:1;transform:none}
+
+@media(max-width:900px){
+ .hero .in,.g2,.tree-wrap{grid-template-columns:1fr}
+ .g3,.opts{grid-template-columns:1fr}
+ .g4,.dict{grid-template-columns:1fr 1fr}
+ .brand small{display:none}
+ .timer{width:150px}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="in">
+  <div class="brand"><div class="logo">🌿</div><div>Bilim Hub орталығы<small>Қазақ тілі · 5-сынып</small></div></div>
+  <nav class="nav">
+    <a href="#bastau">Басы</a><a href="#teoriya">Теория</a><a href="#tapsyrma">Тапсырмалар</a>
+    <a href="#oiyn">Ойындар</a><a href="#deng">А / С</a><a href="#refl">Рефлексия</a><a href="#uy">Үй тапсырмасы</a>
+  </nav>
+</div></div>
+
+<header class="hero">
+  <div class="sun"></div><div class="cloud c1"></div><div class="cloud c2"></div>
+  <div class="in">
+    <div>
+      <span class="tag">🌿 Bilim Hub орталығы · 5-сынып · Қазақ тілі</span>
+      <h1>Табиғатты <span>аялайық!</span></h1>
+      <p class="lead">Хабарландыру жазуды үйренеміз, қатесіз жазамыз, синоним, антоним, омонимдермен сөзімізді әрлейміз.</p>
+      <div style="margin-top:26px;display:flex;gap:14px;flex-wrap:wrap">
+        <a href="#bastau" class="btn b-sun">Сабақты бастау →</a>
+        <a href="#oiyn" class="btn b-white">🎮 Ойындар</a>
+      </div>
+    </div>
+    <div class="glass">
+      <h3>🎯 Оқу мақсаттары</h3>
+      <div class="goal"><b>5.2.3.1</b><span>хабарландырудың құрылымы мен ресімделуі арқылы жанрлық ерекшеліктерін ажырату</span></div>
+      <div class="goal"><b>5.3.6.1</b><span>мәтіндегі орфографиялық қателерді сөздіктерге сүйене отырып, түзету және редакциялау</span></div>
+      <div class="goal"><b>5.4.3.1</b><span>омоним, антоним, синонимдерді көркемдік ерекшеліктеріне сай қолдану</span></div>
+    </div>
+  </div>
+  <svg class="hills" viewBox="0 0 1440 230" preserveAspectRatio="none">
+    <path fill="#3f9e63" d="M0,120 C200,60 380,150 620,100 C860,50 1080,140 1440,80 L1440,230 L0,230Z"/>
+    <path fill="#2f8a57" d="M0,170 C260,120 520,200 780,160 C1040,120 1240,190 1440,150 L1440,230 L0,230Z"/>
+    <path fill="#f2f8ee" d="M0,215 C360,195 1080,235 1440,210 L1440,230 L0,230Z"/>
+  </svg>
+</header>
+
+<section style="padding-top:20px"><div class="wrap g4">
+  <div class="stage reveal"><b>5′</b><span>Ұйымдастыру, топқа бөлу</span></div>
+  <div class="stage reveal"><b>5′</b><span>Қызығушылықты ояту, бейнеролик</span></div>
+  <div class="stage reveal"><b>30′</b><span>Теория, 3 тапсырма, ойындар</span></div>
+  <div class="stage reveal"><b>5′</b><span>Бекіту, рефлексия</span></div>
+</div></section>
+
+<!-- BASTAU -->
+<section id="bastau"><div class="wrap">
+  <div class="sh"><div class="ic">🌱</div><div><p>Сабақтың басы</p><h2>Ұйымдастыру және қызығушылықты ояту</h2></div></div>
+  <div class="g2">
+    <div class="card reveal">
+      <span class="pill">Психологиялық ахуал</span>
+      <h3 style="margin:8px 0;color:var(--moss)">«Табиғаттан тілек»</h3>
+      <p>Әр оқушы табиғат бейнесімен тілек айтады: <i>«Саған күндей жылу, бұлақтай тазалық тілеймін!»</i> Байқадыңыз ба, біз сөзімізді әрлеп, <b>көркем</b> сөйледік.</p>
+      <span class="pill" style="margin-top:16px">Топқа бөлу</span>
+      <h3 style="margin:8px 0;color:var(--moss)">«Жапырақ таңда»</h3>
+      <div class="gout" id="gout">🍃 ?</div>
+      <button class="btn b-leaf" onclick="pickG()">Жапырақты аш</button>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px">
+        <div class="gchip gs">1-топ «Синоним»</div><div class="gchip ga">2-топ «Антоним»</div><div class="gchip go">3-топ «Омоним»</div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="card" style="margin-bottom:18px">
+        <span class="pill">Үй тапсырмасын тексеру</span>
+        <h3 style="margin:8px 0;color:var(--moss)">«Сұрақ-жауап доп»</h3>
+        <p>Доп лақтырылған оқушы өткен тақырып бойынша бір сұраққа жауап береді, сосын допты келесі оқушыға береді.</p>
+      </div>
+      <div class="card">
+        <span class="pill">«Ой қозғау»</span>
+        <p class="big-q">Мектепке «Ертең сенбілік болады» деген жазу ілінді. Онда тағы нені жазу керек?</p>
+        <p>Оқушылар болжайды: <b>Кім? Не? Қашан? Қайда?</b> → тақырыпқа шығамыз.</p>
+      </div>
+    </div>
+  </div>
+  <div class="g2" style="margin-top:22px">
+    <div class="reveal">
+      <a class="vlink" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=%D0%A2%D0%B0%D0%B1%D0%B8%D2%93%D0%B0%D1%82%D1%82%D1%8B+%D0%B0%D1%8F%D0%BB%D0%B0%D0%B9%D1%8B%D2%9B+%D0%B1%D0%B5%D0%B9%D0%BD%D0%B5%D1%80%D0%BE%D0%BB%D0%B8%D0%BA"><div class="play">▶</div><div><b>«Табиғатты аялайық» бейнеролигі</b><small>YouTube · 1,5–2 мин</small></div></a>
+      <a class="vlink" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=%D1%85%D0%B0%D0%B1%D0%B0%D1%80%D0%BB%D0%B0%D0%BD%D0%B4%D1%8B%D1%80%D1%83+%D0%B6%D0%B0%D0%B7%D1%83+%D2%9B%D0%B0%D0%B7%D0%B0%D2%9B+%D1%82%D1%96%D0%BB%D1%96+5+%D1%81%D1%8B%D0%BD%D1%8B%D0%BF"><div class="play">▶</div><div><b>Хабарландыру қалай жазылады?</b><small>YouTube · бейнесабақ</small></div></a>
+      <a class="vlink" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=%D1%81%D0%B8%D0%BD%D0%BE%D0%BD%D0%B8%D0%BC+%D0%B0%D0%BD%D1%82%D0%BE%D0%BD%D0%B8%D0%BC+%D0%BE%D0%BC%D0%BE%D0%BD%D0%B8%D0%BC+%D2%9B%D0%B0%D0%B7%D0%B0%D2%9B+%D1%82%D1%96%D0%BB%D1%96"><div class="play">▶</div><div><b>Синоним, антоним, омоним</b><small>YouTube · түсіндірме</small></div></a>
+    </div>
+    <div class="card reveal">
+      <span class="pill">Бейнеролик бойынша сұрақ</span>
+      <p class="big-q">Табиғатқа қалай көмектесе аламыз?</p>
+      <p>Оқушылар жауабын бір сөзбен айтады: <b>тал егу, қоқыс жинау, құстарға жем салу, суды үнемдеу...</b> Осы сөздер сабақтағы хабарландыруларымыздың тақырыбы болады.</p>
+      <div class="value">🌍 Құндылық: жауапкершілік — табиғатқа деген қамқорлық</div>
+    </div>
+  </div>
+</div></section>
+
+<!-- TEORIYA -->
+<section id="teoriya" style="background:#fff"><div class="wrap">
+  <div class="sh"><div class="ic">📌</div><div><p>Жаңа білім · «Хабарландыру анатомиясы»</p><h2>Хабарландыру деген не?</h2></div></div>
+  <div class="g2">
+    <div class="reveal">
+      <p style="font-size:17px"><b>Хабарландыру</b> — көпшілікке бір іс-шара, жаңалық не өтініш туралы <b>қысқа, нақты</b> ақпарат беретін мәтін. Ол <b>ресми-іскери стильде</b> жазылады.</p>
+      <h3 style="margin:18px 0 6px;color:var(--leaf)">Құрылымы — 5 сұрақ</h3>
+      <ol class="steps">
+        <li><b>Тақырыбы:</b> «Хабарландыру!», «Назар аударыңыздар!»</li>
+        <li><b>Не болады?</b> — іс-шараның атауы, мазмұны</li>
+        <li><b>Қашан?</b> — күні, уақыты</li>
+        <li><b>Қайда?</b> — өтетін орны</li>
+        <li><b>Кім?</b> — ұйымдастырушы, байланыс, шақыру сөз</li>
+      </ol>
+      <h3 style="margin:18px 0 6px;color:var(--leaf)">Ресімделуі мен жанрлық ерекшелігі</h3>
+      <ul style="margin-left:20px">
+        <li>Тақырыбы ірі әріппен, ортаға жазылады</li>
+        <li>Сөйлемдері қысқа, артық сөз жоқ</li>
+        <li>Нақты дерек: сан, күн, сағат, мекенжай</li>
+        <li>Шақыру, үндеу: «Келіңіздер!», «Қатысыңыздар!»</li>
+        <li>Сурет, белгі қосуға болады</li>
+      </ul>
+    </div>
+    <div class="reveal">
+      <div class="ann">
+        <div class="pin">📌</div>
+        <span class="part" onclick="this.classList.toggle('on')"><span class="lbl">Тақырыбы</span><h3>ХАБАРЛАНДЫРУ</h3></span>
+        <span class="part" onclick="this.classList.toggle('on')"><span class="lbl">Не болады?</span>Құрметті оқушылар! Мектеп ауласында <b>«Жасыл мектеп» сенбілігі</b> өтеді.</span>
+        <span class="part" onclick="this.classList.toggle('on')"><span class="lbl">Қашан?</span>📅 Сенбі, сағат 10:00-де</span>
+        <span class="part" onclick="this.classList.toggle('on')"><span class="lbl">Қайда?</span>📍 Мектептің артқы ауласы</span>
+        <span class="part" onclick="this.classList.toggle('on')"><span class="lbl">Кім? Шақыру</span>Ұйымдастырушы: 5 «А» сыныбы. Қолғап ала келіңіздер! <b>Табиғатты бірге аялайық!</b></span>
+        <p style="font-size:12px;color:var(--muted);margin-top:8px">👆 Әр бөлікті басып, құрылымын көр</p>
+      </div>
+      <div class="value">📜 Құндылық: заң және тәртіп — ресми мәтіннің ережесін сақтау</div>
+    </div>
+  </div>
+
+  <div class="sh" style="margin-top:50px"><div class="ic">🔤</div><div><p>Лексика</p><h2>Синоним, антоним, омоним</h2></div></div>
+  <div class="g3">
+    <div class="word-card ws reveal"><div class="big">≈</div><h3>Синоним</h3><p class="def">Дыбысталуы әртүрлі, мағынасы жақын сөздер. Сөзді қайталамау, әрлеу үшін керек.</p>
+      <div class="ex">орман — тоғай</div><div class="ex">әдемі — көркем — сұлу</div><div class="ex">аялау — қорғау — сақтау</div></div>
+    <div class="word-card wa reveal"><div class="big">⇄</div><h3>Антоним</h3><p class="def">Мағынасы қарама-қарсы сөздер. Салыстыру, айшықты көрсету үшін керек.</p>
+      <div class="ex">таза — лас</div><div class="ex">биік — аласа</div><div class="ex">ыстық — суық</div></div>
+    <div class="word-card wo reveal"><div class="big">=</div><h3>Омоним</h3><p class="def">Дыбысталуы бірдей, мағынасы мүлде басқа сөздер. Мағынасы сөйлемде ашылады.</p>
+      <div class="ex">жаз (жыл мезгілі) — жаз (хат жаз)</div><div class="ex">ай (аспанда) — ай (қараша айы)</div><div class="ex">қой (жануар) — қой (кітапты қой)</div></div>
+  </div>
+
+  <div class="sh" style="margin-top:50px"><div class="ic">📖</div><div><p>Орфография</p><h2>Сөздікпен қатені түзету — 4 қадам</h2></div></div>
+  <div class="dict">
+    <div class="reveal"><b>👀</b>1. Күмәнді сөзді тап</div>
+    <div class="reveal"><b>🔤</b>2. Сөздіктен әліпби бойынша ізде</div>
+    <div class="reveal"><b>✏️</b>3. Дұрыс жазылуын салыстыр</div>
+    <div class="reveal"><b>✅</b>4. Түзетіп, қайта оқы</div>
+  </div>
+  <p class="reveal" style="margin-top:16px;font-weight:700">Жиі қате: <span style="color:#c0392b">табигат, агаш, кус</span> → <span style="color:var(--leaf)">табиғат, ағаш, құс</span>. Қазақ тіліне тән <b>ә, ғ, қ, ң, ө, ұ, ү, һ, і</b> әріптерін ұмытпа!</p>
+</div></section>
+
+<!-- TASKS -->
+<section id="tapsyrma"><div class="wrap">
+  <div class="sh"><div class="ic">✍️</div><div><p>Сабақтың ортасы</p><h2>Сабақтағы 3 тапсырма</h2></div></div>
+
+  <div class="task reveal">
+    <span class="tnum">1-ТАПСЫРМА · ЖЕКЕ ЖҰМЫС</span>
+    <div class="method">Әдісі: «Хабарландыру анатомиясы»</div>
+    <h3>Құрылымын белгіле, жанрын дәлелде</h3>
+    <div class="value">📜 Құндылық: заң және тәртіп — ереже бойынша жұмыс істеу</div>
+    <div class="textbox"><b>ХАБАРЛАНДЫРУ!</b> Құрметті тұрғындар! 25 қараша күні сағат 11:00-де «Сарыарқа» саябағында «Құстарға қамқорлық» акциясы өтеді. Біз ағаштарға жемсауыт іліп, құстарға жем саламыз. Ұйымдастырушы — 5 «Ә» сыныбы. Анықтама үшін: 8 700 000 00 00. Келіңіздер, табиғатқа бірге қамқор болайық!</div>
+    <ol>
+      <li>Мәтіннен <b>не? қашан? қайда? кім?</b> бөліктерін әр түспен сыз.</li>
+      <li>Бұл мәтіннің хабарландыру екенін 2 белгімен дәлелде.</li>
+      <li>«Қамқорлық» сөзіне 1 синоним, «келіңіздер» сөзіне 1 антоним жаз.</li>
+    </ol>
+    <div class="desc"><table><tr><th>Дескриптор</th><th>Балл</th></tr>
+      <tr><td>хабарландырудың құрылымдық бөліктерін анықтайды</td><td>1</td></tr>
+      <tr><td>жанрлық ерекшелігін 2 белгімен дәлелдейді</td><td>1</td></tr>
+      <tr><td>синоним, антонимді дұрыс табады</td><td>1</td></tr></table></div>
+  </div>
+
+  <div class="task reveal">
+    <span class="tnum">2-ТАПСЫРМА · ЖҰПТЫҚ ЖҰМЫС</span>
+    <div class="method">Әдісі: «Жас редактор»</div>
+    <h3>Қатені сөздікпен түзет</h3>
+    <div class="value">💪 Құндылық: еңбекқорлық және кәсіби біліктілік — мұқият, ұқыпты жұмыс</div>
+    <div class="textbox">Біздің ауылдың <u>табигаты</u> өте әдемі. Көктемде <u>агаштар</u> жасыл <u>жапрақ</u> жаяды. Өзен жағасында <u>кустар</u> сайрайды. Бірақ кейбір адамдар <u>коқысты</u> жерге тастайды. Сенбілікке барлығыңыз <u>келініздер</u>! Таза ауа — <u>денсаулык</u> кепілі.</div>
+    <ol>
+      <li>Мәтіндегі 7 орфографиялық қатені орфографиялық сөздікке сүйеніп түзет.</li>
+      <li>«әдемі» сөзін синониммен алмастырып, мәтінді редакцияла.</li>
+      <li>Жұбыңмен дәптер алмасып, «Екі жұлдыз, бір тілек» әдісімен тексер.</li>
+    </ol>
+    <p style="margin-top:8px;font-weight:700">💡 Сайттағы <b>«Қатені тап»</b> ойынымен өзіңді тексер!</p>
+    <div class="desc"><table><tr><th>Дескриптор</th><th>Балл</th></tr>
+      <tr><td>орфографиялық қателерді табады</td><td>1</td></tr>
+      <tr><td>сөздікке сүйеніп дұрыс түзетеді</td><td>1</td></tr>
+      <tr><td>синониммен мәтінді редакциялайды</td><td>1</td></tr></table></div>
+  </div>
+
+  <div class="task reveal">
+    <span class="tnum">3-ТАПСЫРМА · ТОПТЫҚ ЖҰМЫС</span>
+    <div class="method">Әдісі: «Эко-хабарландыру» + «Галерея арқылы серуен»</div>
+    <h3>Өз хабарландыруыңды жаса</h3>
+    <div class="value">🤝 Құндылық: бірлік және ынтымақ; жасампаздық және жаңашылдық</div>
+    <ul>
+      <li><b>1-топ «Синоним»</b> — «Тал егу» акциясына хабарландыру</li>
+      <li><b>2-топ «Антоним»</b> — «Таза аула» сенбілігіне хабарландыру</li>
+      <li><b>3-топ «Омоним»</b> — «Құстарға жем сал» акциясына хабарландыру</li>
+    </ul>
+    <p style="margin-top:10px"><b>Шарты:</b> А3 параққа 5 бөліктен тұратын хабарландыру жазыңдар; топ атына сай кемінде 2 жұп <b>синоним / антоним / омоним</b> қолданып, түспен белгілеңдер; бір ұран ойлаңдар. Хабарландыруды іліп, «Галерея арқылы серуен» әдісімен қорғаңдар.</p>
+    <div class="desc"><table><tr><th>Дескриптор</th><th>Балл</th></tr>
+      <tr><td>хабарландырудың 5 бөлігін сақтап ресімдейді</td><td>1</td></tr>
+      <tr><td>синоним/антоним/омонимді көркемдікке сай қолданады</td><td>1</td></tr>
+      <tr><td>орфографиялық қатесіз жазып, қорғайды</td><td>1</td></tr></table></div>
+    <p style="margin-top:12px;font-weight:900;color:var(--coral)">Барлығы: 9 балл · «Жарайсың!», «Керемет!», «Талпын!»</p>
+  </div>
+
+  <h3 class="reveal" style="color:var(--forest);font-size:26px;margin:40px 0 6px">🤸 Сергіту сәті «Антоним-қимыл»</h3>
+  <div class="g3 move reveal">
+    <div><b>🙆</b>«Биік!» — қолды жоғары созамыз<br>«Аласа!» — отырамыз</div>
+    <div><b>🏃</b>«Жылдам!» — орнымызда жүгіреміз<br>«Баяу!» — ақырын қадам</div>
+    <div><b>🤗</b>«Үлкен!» — қолды кең ашамыз<br>«Кішкентай!» — жиырыламыз</div>
+  </div>
+</div></section>
+
+<!-- GAMES -->
+<section id="oiyn" class="games"><div class="wrap">
+  <div class="sh"><div class="ic">🎮</div><div><p>Интерактивті ойындар</p><h2>Ойнай отырып үйренеміз</h2></div></div>
+
+  <div class="game reveal">
+    <span class="score" id="s1">0 / 7</span>
+    <h3>1-ойын. «Қатені тап»</h3>
+    <p class="sub">Қате жазылған сөзді бас — ол түзеледі. 7 қате жасырылған!</p>
+    <div class="errtext" id="errtext"></div>
+    <div class="fb" id="fb1"></div>
+  </div>
+
+  <div class="game reveal">
+    <span class="score" id="s2">0 / 0</span>
+    <h3>2-ойын. «Синоним бе, антоним бе, омоним бе?»</h3>
+    <p class="sub">Сөз жұбын оқы да, түрін таңда.</p>
+    <div class="pair" id="pair"></div>
+    <div class="btns">
+      <button class="btn b-leaf" onclick="ansP('s')">≈ Синоним</button>
+      <button class="btn b-coral" onclick="ansP('a')">⇄ Антоним</button>
+      <button class="btn b-white" onclick="ansP('o')">= Омоним</button>
+    </div>
+    <div class="fb" id="fb2"></div>
+  </div>
+
+  <div class="game reveal">
+    <span class="score" id="s3">0 / 5</span>
+    <h3>3-ойын. «Хабарландыруды құрастыр»</h3>
+    <p class="sub">Бөліктерді дұрыс ретпен бас: тақырыбы → не? → қашан? → қайда? → кім/шақыру.</p>
+    <div class="bank" id="bank3"></div>
+    <div class="slots" id="slots"></div>
+    <button class="btn b-white" onclick="initBuild()">↺ Қайта бастау</button>
+  </div>
+
+  <div class="game reveal">
+    <span class="score" id="s4">0</span>
+    <h3>4-ойын. «Кім жылдам?»</h3>
+    <p class="sub">Бекіту кезеңі · әр сұраққа 15 секунд</p>
+    <div class="bar"><i id="qbar"></i></div>
+    <div id="qinfo" style="font-size:13px;color:#cfe6d6"></div>
+    <div class="quiz-q" id="qq"></div>
+    <div class="opts" id="qo"></div>
+    <div style="margin-top:14px"><button class="btn b-sun" id="qstart" onclick="startQ()">Бастау ▶</button></div>
+  </div>
+</div></section>
+
+<!-- LEVELS -->
+<section id="deng"><div class="wrap">
+  <div class="sh"><div class="ic">🎯</div><div><p>Саралап оқыту</p><h2>А және С деңгейіне жеке тапсырма</h2></div></div>
+  <div class="g2">
+    <div class="level lA reveal"><div class="badge">A</div>
+      <h3>«Хабарландыру ме, жарнама ма?»</h3>
+      <ul>
+        <li>Берілген екі мәтінді салыстырып, хабарландырудың жарнамадан 3 айырмашылығын жаз.</li>
+        <li>«Су — тіршілік көзі» тақырыбында қысқа хабарландыру жаз, онда <b>омоним</b> арқылы ойнақы ұран құра (мысалы: «Жаз келді — табиғатқа қамқорлық туралы бір хат жаз!»).</li>
+      </ul>
+      <div class="value">Дескриптор: айырмашылықты ажыратады — 1; омонимді көркем қолданады — 1</div>
+    </div>
+    <div class="level lC reveal"><div class="badge">C</div>
+      <h3>«Бос орынды толтыр»</h3>
+      <ul>
+        <li>Үлгідегі хабарландырудың бос орындарына берілген сөздерді қой: <i>сенбі, саябақта, сенбілік, 5 «Ә» сыныбы, келіңіздер</i>.</li>
+        <li>Антоним жұптарын сызықпен қос: таза – ..., биік – ..., ыстық – ...</li>
+      </ul>
+      <div class="value">Дескриптор: хабарландыру бөліктерін толтырады — 1; антонимді дұрыс табады — 1</div>
+    </div>
+  </div>
+</div></section>
+
+<!-- REFLECTION -->
+<section id="refl" style="background:#fff"><div class="wrap">
+  <div class="sh"><div class="ic">🌳</div><div><p>Сабақтың соңы</p><h2>Рефлексия «Білім ағашы»</h2></div></div>
+  <div class="tree-wrap">
+    <div class="tree reveal" id="tree"><div class="crown"></div><div class="trunk"></div></div>
+    <div class="reveal">
+      <p style="font-weight:800;margin-bottom:12px">Ағашқа жапырағыңды іл:</p>
+      <div class="leaves">
+        <button class="lbtn" onclick="leaf('🍏')"><span>🍏</span>Жасыл<small>Бәрін түсіндім, өзім жаза аламын</small></button>
+        <button class="lbtn" onclick="leaf('🍋')"><span>🍋</span>Сары<small>Түсіндім, бірақ сұрағым бар</small></button>
+        <button class="lbtn" onclick="leaf('🍎')"><span>🍎</span>Қызыл<small>Қиналдым, көмек керек</small></button>
+      </div>
+      <div style="margin-top:16px"><b>Бүгін мен білдім...</b><textarea placeholder="хабарландыру 5 бөліктен тұрады..."></textarea></div>
+      <div style="margin-top:8px"><b>Табиғат үшін мен...</b><textarea placeholder="тал егемін, қоқысты жерге тастамаймын..."></textarea></div>
+      <div class="value">⚖ Құндылық: әділдік және жауапкершілік — өз жұмысын әділ бағалау</div>
+    </div>
+  </div>
+</div></section>
+
+<!-- HOMEWORK -->
+<section id="uy"><div class="wrap">
+  <div class="sh"><div class="ic">🏠</div><div><p>Үй тапсырмасы</p><h2>Деңгейіңді таңда</h2></div></div>
+  <div class="g3 hw">
+    <div class="card reveal"><span class="pill">Деңгей A</span><h4>Эко-плакат</h4><p>«Табиғатты аялайық!» тақырыбында сурет қосылған хабарландыру-плакат жаса. Синоним, антоним, омонимнің әрқайсысынан 1 жұп қолданып, түспен белгіле.</p></div>
+    <div class="card reveal"><span class="pill">Деңгей B</span><h4>Шағын мәтін</h4><p>«Табиғат — біздің үйіміз» тақырыбында 6–7 сөйлем жаз. 2 синоним, 2 антоним қолдан, жазылуын орфографиялық сөздікпен тексер.</p></div>
+    <div class="card reveal"><span class="pill">Деңгей C</span><h4>Сөз қоржыны</h4><p>Табиғатқа байланысты 5 синоним жұбын және 5 антоним жұбын жаз, біреуімен сөйлем құра.</p></div>
+  </div>
+</div></section>
+
+<footer>
+  <div class="brand"><div class="logo">🌿</div><div>Bilim Hub орталығы</div></div>
+  <p>Қазақ тілі мен әдебиеті пәні мұғалімдеріне арналған сабақ сайттары мен ҚМЖ</p>
+  <p style="margin-top:8px">Тапсырыс беру: <a href="https://wa.me/77780400516" target="_blank" rel="noopener">WhatsApp 8 778 040 05 16</a></p>
+  <p style="margin-top:12px;font-size:12px;opacity:.7">© Bilim Hub орталығы, 2026. Материалды рұқсатсыз таратуға болмайды.</p>
+</footer>
+
+<div class="timer" id="timer">
+  <div class="hd" onclick="document.getElementById('timer').classList.toggle('min')"><span>⏱ Таймер</span><span>–</span></div>
+  <div class="body"><div class="t" id="tt">05:00</div>
+    <div class="row"><button onclick="setT(1)">1′</button><button onclick="setT(3)">3′</button><button onclick="setT(5)">5′</button><button onclick="setT(10)">10′</button></div>
+    <div class="row"><button id="tgo" onclick="togT()">▶ Бастау</button><button onclick="setT(tM)">↺</button></div></div>
+</div>
+
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target)}}),{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* groups */
+const GN=['🍃 1-топ «Синоним»','🍂 2-топ «Антоним»','🌿 3-топ «Омоним»'];let gc=0;
+function pickG(){const o=document.getElementById('gout');let n=0;const iv=setInterval(()=>{o.textContent=GN[n++%3];if(n>12){clearInterval(iv);o.textContent=GN[gc++%3]}},70)}
+
+/* game 1: find errors */
+const T=[["Біздің"],["ауылдың"],["табигаты","табиғаты"],["өте"],["әдемі."],["Көктемде"],["агаштар","ағаштар"],["жасыл"],["жапрақ","жапырақ"],["жаяды."],["Өзен"],["жағасында"],["кустар","құстар"],["сайрайды."],["Бірақ"],["кейбір"],["адамдар"],["коқысты","қоқысты"],["жерге"],["тастайды."],["Сенбілікке"],["барлығыңыз"],["келініздер!","келіңіздер!"],["Таза"],["ауа"],["—"],["денсаулык","денсаулық"],["кепілі."]];
+let e1=0;
+function initErr(){e1=0;document.getElementById('s1').textContent='0 / 7';const box=document.getElementById('errtext');box.innerHTML='';
+ T.forEach(t=>{const s=document.createElement('span');s.className='w';s.textContent=t[0];
+  s.onclick=()=>{if(s.classList.contains('fixed'))return;if(t[1]){s.textContent=t[1];s.classList.add('fixed');e1++;document.getElementById('s1').textContent=e1+' / 7';const f=document.getElementById('fb1');f.className='fb ok';f.textContent=e1===7?'🎉 Тамаша! Барлық қате түзелді. Сен — нағыз редакторсың!':'✔ Дұрыс: «'+t[0]+'» → «'+t[1]+'»'}
+   else{s.classList.remove('bad');void s.offsetWidth;s.classList.add('bad');const f=document.getElementById('fb1');f.className='fb no';f.textContent='✘ «'+t[0]+'» дұрыс жазылған. Сөздікпен тексер!'}};
+  box.appendChild(s);box.appendChild(document.createTextNode(' '))})}
+initErr();
+
+/* game 2 */
+const P=[["таза — лас","a"],["орман — тоғай","s"],["жаз (мезгіл) — жаз (хат жаз)","o"],["әдемі — көркем","s"],["биік — аласа","a"],["ай (аспан) — ай (қараша айы)","o"],["аялау — қорғау","s"],["ыстық — суық","a"],["қой (жануар) — қой (кітапты қой)","o"],["жақын — алыс","a"]];
+const PN={s:'синоним',a:'антоним',o:'омоним'};let pi=0,ps=0,pn=0,pl=false;
+function showP(){const p=document.getElementById('pair');if(pi>=P.length){p.innerHTML='🏆 Нәтиже: '+ps+' / '+P.length+'<br><button class="btn b-sun" style="margin-top:10px" onclick="pi=0;ps=0;pn=0;upP();showP();document.getElementById(\'fb2\').textContent=\'\'">↺ Қайта</button>';return}p.textContent=P[pi][0];pl=false}
+function upP(){document.getElementById('s2').textContent=ps+' / '+pn}
+function ansP(a){if(pl||pi>=P.length)return;pl=true;pn++;const r=P[pi][1],f=document.getElementById('fb2');if(a===r){ps++;f.className='fb ok';f.textContent='✔ Дұрыс! Бұл — '+PN[r]+'.'}else{f.className='fb no';f.textContent='✘ Қате. Бұл — '+PN[r]+'.'}upP();pi++;setTimeout(showP,1300)}
+showP();
+
+/* game 3 */
+const B=["ХАБАРЛАНДЫРУ!","Мектеп ауласында «Таза аула» сенбілігі өтеді.","Сенбі күні, сағат 10:00-де","Мектептің артқы ауласында","Ұйымдастырушы — 5 «Ә» сыныбы. Келіңіздер!"];
+const BL=["Тақырыбы","Не болады?","Қашан?","Қайда?","Кім? Шақыру"];let bs=0;
+function initBuild(){bs=0;document.getElementById('s3').textContent='0 / 5';const sl=document.getElementById('slots');sl.innerHTML='';
+ BL.forEach((l,i)=>{const d=document.createElement('div');d.className='slot';d.innerHTML='<i>'+(i+1)+'</i><span style="opacity:.6">'+l+'</span>';sl.appendChild(d)});
+ const bk=document.getElementById('bank3');bk.innerHTML='';B.map((t,i)=>[t,i]).sort(()=>Math.random()-.5).forEach(([t,i])=>{const c=document.createElement('button');c.className='chip';c.textContent=t;
+  c.onclick=()=>{if(i===bs){const d=sl.children[bs];d.classList.add('done');d.innerHTML='<i>✓</i>'+t;c.remove();bs++;document.getElementById('s3').textContent=bs+' / 5';if(bs===5)bk.innerHTML='<b style="color:var(--sun)">🎉 Хабарландыру дайын! Құрылымы дұрыс.</b>'}else{c.classList.add('wrong');setTimeout(()=>c.classList.remove('wrong'),600)}};bk.appendChild(c)})}
+initBuild();
+
+/* quiz */
+const Q=[
+ ["Хабарландырудың басты мақсаты:",["Ертегі айту","Көпшілікке қысқа ақпарат беру","Кейіпкерді суреттеу","Өлең жазу"],1],
+ ["Хабарландыруда міндетті түрде болмайтын бөлік:",["Қашан?","Қайда?","Кейіпкердің ішкі ойы","Не болады?"],2],
+ ["«таза — лас» сөздері:",["Синоним","Антоним","Омоним","Көп мағыналы сөз"],1],
+ ["«орман — тоғай» сөздері:",["Синоним","Антоним","Омоним","Термин"],0],
+ ["«Жаз келді. Хат жаз.» сөйлемдеріндегі «жаз» сөзі:",["Синоним","Антоним","Омоним","Кірме сөз"],2],
+ ["Дұрыс жазылған сөз:",["табигат","табиқат","табиғат","тәбиғат"],2],
+ ["Сөздің дұрыс жазылуын тексеретін сөздік:",["Орфографиялық сөздік","Аударма сөздік","Терминдер сөздігі","Фразеологиялық сөздік"],0]
+];let qi=0,qs=0,qt;
+function startQ(){qi=0;qs=0;document.getElementById('s4').textContent='0';document.getElementById('qstart').style.display='none';showQ()}
+function showQ(){clearInterval(qt);if(qi>=Q.length){document.getElementById('qq').textContent='🏆 Нәтиже: '+qs+' / '+Q.length;document.getElementById('qo').innerHTML='';document.getElementById('qinfo').textContent='';const b=document.getElementById('qstart');b.style.display='';b.textContent='↺ Қайта ойнау';return}
+ const [q,o]=Q[qi];document.getElementById('qinfo').textContent=(qi+1)+' / '+Q.length+' сұрақ';document.getElementById('qq').textContent=q;const box=document.getElementById('qo');box.innerHTML='';
+ o.forEach((t,i)=>{const b=document.createElement('button');b.className='opt';b.textContent=['А','Ә','Б','В'][i]+') '+t;b.onclick=()=>{clearInterval(qt);rev(i)};box.appendChild(b)});
+ const bar=document.getElementById('qbar');bar.style.transition='none';bar.style.width='100%';setTimeout(()=>{bar.style.transition='width 15s linear';bar.style.width='0%'},30);
+ let left=15;qt=setInterval(()=>{if(--left<=0){clearInterval(qt);rev(-1)}},1000)}
+function rev(i){const a=Q[qi][2];document.querySelectorAll('#qo .opt').forEach((b,k)=>{b.disabled=true;if(k===a)b.classList.add('r');else if(k===i)b.classList.add('x')});if(i===a){qs++;document.getElementById('s4').textContent=qs}qi++;setTimeout(showQ,1500)}
+
+/* reflection */
+function leaf(e){const t=document.getElementById('tree');const s=document.createElement('span');s.className='leafdot';s.textContent=e;
+ const a=Math.random()*Math.PI*2,r=Math.sqrt(Math.random());s.style.left='calc(50% + '+(Math.cos(a)*r*130-13)+'px)';s.style.top=(130+Math.sin(a)*r*90-13)+'px';t.appendChild(s)}
+
+/* timer */
+let tM=5,tS=300,tR=null;const fm=s=>String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0');
+function setT(m){tM=m;tS=m*60;clearInterval(tR);tR=null;document.getElementById('tgo').textContent='▶ Бастау';const t=document.getElementById('tt');t.textContent=fm(tS);t.style.color=''}
+function togT(){const g=document.getElementById('tgo');if(tR){clearInterval(tR);tR=null;g.textContent='▶ Бастау';return}g.textContent='⏸ Тоқтату';
+ tR=setInterval(()=>{if(tS<=0){clearInterval(tR);tR=null;g.textContent='▶ Бастау';document.getElementById('tt').style.color='#ffb3b3';return}document.getElementById('tt').textContent=fm(--tS)},1000)}
+</script>
+</body>
+</html>
